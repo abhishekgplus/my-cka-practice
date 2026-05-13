@@ -1,7 +1,7 @@
 #Check github CLI Version
 $ gh --version
-gh version 2.92.0 (2026-04-28)
-https://github.com/cli/cli/releases/tag/v2.92.0
+# gh version 2.92.0 (2026-04-28)
+# https://github.com/cli/cli/releases/tag/v2.92.0
 
 # Log In :
 gh auth login
@@ -13,8 +13,8 @@ git remote set-url origin https://github.com/abhishekgplus/my-cka-practice.git
 git remote -v
 
 #Expected output:
-origin  https://github.com/abhishekgplus/my-cka-practice.git (fetch)
-origin  https://github.com/abhishekgplus/my-cka-practice.git (push)
+# origin  https://github.com/abhishekgplus/my-cka-practice.git (fetch)
+# origin  https://github.com/abhishekgplus/my-cka-practice.git (push)
 
 # Create the repo
 gh repo create my-cka-practice --public --source=. --remote=origin
