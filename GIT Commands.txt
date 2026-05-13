@@ -111,3 +111,6 @@ Step by step:
 git branch -d abhi-test          # deletes local branch
 git push origin --delete abhi-test  # deletes branch on GitHub
 # Helps keep your repo clean after feature branch work is merged.
+
+# Set Git globally to keep lf and not crlf:
+git config --global core.autocrlf input
