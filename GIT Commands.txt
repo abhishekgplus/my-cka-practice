@@ -1,0 +1,27 @@
+#Configure Git
+-----------------
+git --version
+git config --global user.name "Abhishek"
+git config --global user.email "abhishek.gplus@gmail.com"
+git config --global --list
+
+#Create a local repo, add an initial commit, and set main branch
+-----------------------------------------------------------------
+# create folder and enter it
+    mkdir -p /d/CKA/my-cka-practice
+    cd /d/CKA/my-cka-practice
+
+git init
+git status
+
+# Create README.md with content "# my-cka-practice"
+echo "# my-cka-practice" > README.md
+
+# Stage the README.md file for commit
+git add README.md
+
+# Commit the staged file with a message
+git commit -m "Initial commit"
+
+# Rename the current branch to 'main'
+git branch -M main
