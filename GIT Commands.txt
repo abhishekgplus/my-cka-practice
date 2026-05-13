@@ -25,3 +25,83 @@ git commit -m "Initial commit"
 
 # Rename the current branch to 'main'
 git branch -M main
+
+#Create a new branch locally
+git checkout -b my-feature-branch
+
+
+---------------------------------------------------------------------------
+1️⃣ Checking your current branch
+git branch
+Lists all local branches.
+The current branch has a * next to it.
+Example output:
+* abhi-test
+  main
+
+Means you’re on abhi-test.
+
+2️⃣ Switching to a branch
+git checkout main
+Switches your working directory to the branch main.
+Updates your files to match the state of that branch.
+Important: Any uncommitted changes should be either committed or stashed before switching.
+3️⃣ Creating a new branch and switching to it
+git checkout -b abhi-test
+-b tells Git: create a new branch named abhi-test and switch to it immediately.
+The new branch is created based on the branch you’re currently on, usually main.
+After this, your branch is an exact copy of main at that moment.
+4️⃣ Viewing commit history
+git log --oneline
+Shows all commits in your current branch in short form (one line per commit).
+Example output:
+dff0f3b (HEAD -> abhi-test, origin/main, main) Added Instruction of using GIT and GITHUB CLI
+92cc589 Initial commit
+HEAD → your current working commit.
+Shows which branch the commit belongs to (abhi-test, main) and which commits exist on GitHub (origin/main).
+5️⃣ Staging changes
+git add .
+git add stages changes in your working directory so they’re ready to commit.
+. → stages all changes in the current folder.
+You can also stage individual files:
+git add README.md
+6️⃣ Committing changes
+git commit -m "Added Instruction of using GIT and GITHUB CLI"
+Saves staged changes to the local repository.
+-m "message" → commit message describing your change.
+Every commit is like a snapshot of your project at that point.
+7️⃣ Pushing a branch to GitHub
+git push -u origin abhi-test
+
+Breakdown:
+
+push → send your commits to a remote repository (GitHub).
+origin → the remote name, usually your GitHub repo.
+abhi-test → the branch you’re pushing.
+-u → sets upstream tracking, so future git push knows where to push automatically.
+
+✅ After this, abhi-test exists on GitHub.
+
+8️⃣ Pull request URL
+
+After pushing a new branch, GitHub suggests a URL:
+
+https://github.com/abhishekgplus/my-cka-practice/pull/new/abhi-test
+Opens a pull request (PR) to merge your branch into main.
+Useful for code review or merging later.
+9️⃣ Merging a branch into main
+git checkout main
+git pull origin main
+git merge abhi-test
+git push origin main
+
+Step by step:
+
+git checkout main → switch to main branch.
+git pull origin main → make sure main is up-to-date with GitHub.
+git merge abhi-test → incorporate changes from abhi-test into main.
+git push origin main → push the updated main branch to GitHub.
+10️⃣ Deleting a branch after merge (optional)
+git branch -d abhi-test          # deletes local branch
+git push origin --delete abhi-test  # deletes branch on GitHub
+Helps keep your repo clean after feature branch work is merged.
